@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="mall/header::head-fragment('NewBee閸熷棗鐓�-妫ｆ牠銆�','index')">
+</head>
+<body>
+<header th:replace="mall/header::header-fragment"></header>
+<content id="content">
+    <nav th:replace="mall/header::nav-fragment"></nav>
+    <div id="banner">
+        <div class="all-sort-list">
+            <th:block th:each="category : ${categories}">
+            <div class="item">
+                <h3><span></span><a href="##"><th:block th:text="${category.categoryName}"></th:block></a></h3>
+                <div class="item-list clearfix">
+                    <div class="subitem">
+                        <th:block th:each="secondLevelCategory : ${category.secondLevelCategoryVOS}">
+                        <dl class="fore1">
+                            <dt><a href="#"><th:block th:text="${secondLevelCategory.categoryName}"></th:block></a></dt>
+                            <dd>
+                                <th:block th:each="thirdLevelCategory : ${secondLevelCategory.thirdLevelCategoryVOS}">
+                                <em><a href="#"th:href="@{'/search?goodsCategoryId='+${thirdLevelCategory.categoryId}}">
+                                    <th:block th:text="${thirdLevelCategory.categoryName}"></th:block>
+                                </a></em>
+                                </th:block>
+                            </dd>
+                        </dl>
+                        </th:block>
+                    </div>
+                </div>
+            </div>
+            </th:block>
+        </div>
+        <div class="swiper-container fl">
+            <div class="swiper-wrapper">
+                <!-- 闁板秶鐤嗘禍鍡氱枂閹绢厼娴橀崚娆愭▔缁�鍝勬倵閸欎即鍘ょ純顔炬畱鏉烆喗鎸遍崶锟� -->
+                <th:block th:unless="${#lists.isEmpty(carousels)}">
+                    <th:block th:each="carousel : ${carousels}">
+                        <div class="swiper-slide">
+                            <a th:href="@{${carousel.redirectUrl}}">
+                                <img th:src="@{${carousel.carouselUrl}}" alt="">
+                            </a>
+                        </div>
+                    </th:block>
+                </th:block>
+                <!-- 閺堫亪鍘ょ純顔跨枂閹绢厼娴橀崚娆愭▔缁�娲帛鐠併倗娈戞稉澶婄炊鏉烆喗鎸遍崶锟� -->
+                <th:block th:if="${#lists.isEmpty(carousels)}">
+                    <div class="swiper-slide">
+                        <img src="./mall/image/swiper/banner01.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./mall/image/swiper/banner02.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./mall/image/swiper/banner03.jpg" alt="">
+                    </div>
+                </th:block>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </div>
+
+    <div id="sub_banner">
+        <!-- 瀹告煡鍘ょ純顔惧劰闁匡拷閸熷棗鎼ч崚娆愭▔缁�娲帳缂冾喖鍞寸�癸拷 -->
+        <th:block th:unless="${#lists.isEmpty(hotGoodses)}">
+            <th:block th:each="hotGoodse : ${hotGoodses}">
+                <div class="hot-image">
+                    <a th:href="@{'/goods/detail/'+${hotGoodse.goodsId}}">
+                        <img th:src="@{${hotGoodse.goodsCoverImg}}" th:alt="${hotGoodse.goodsName}">
+                    </a>
+                </div>
+            </th:block>
+        </th:block>
+        <!-- 閺堫亪鍘ょ純顔惧劰闁匡拷閸熷棗鎼ч崚娆愭▔缁�娲帛鐠侊拷 -->
+        <th:block th:if="${#lists.isEmpty(hotGoodses)}">
+            <div class="hot-image">
+                <a href="##">
+                    <img src="./mall/image/sub_banner/r4.jpg" alt="">
+                </a>
+            </div>
+            <div class="hot-image">
+                <a href="##">
+                    <img src="./mall/image/sub_banner/hot2.jpg" alt="">
+                </a>
+            </div>
+            <div class="hot-image">
+                <a href="##">
+                    <img src="./mall/image/sub_banner/hot3.jpg" alt="">
+                </a>
+            </div>
+            <div class="hot-image">
+                <a href="##">
+                    <img src="./mall/image/sub_banner/hot4.jpg" alt="">
+                </a>
+            </div>
+        </th:block>
+    </div>
+
+    <div id="flash">
+        <h2>閺傛澘鎼ф稉濠勫殠</h2>
+        <ul>
+            <!-- 瀹告煡鍘ょ純顔芥煀閸濅礁鍨弰鍓с仛闁板秶鐤嗛崘鍛啇 -->
+            <th:block th:unless="${#lists.isEmpty(newGoodses)}">
+                <th:block th:each="newGoods : ${newGoodses}">
+                    <li>
+                        <a th:href="@{'/goods/detail/'+${newGoods.goodsId}}">
+                            <img th:src="@{${newGoods.goodsCoverImg}}" th:alt="${newGoods.goodsName}">
+                            <p class="name" th:text="${newGoods.goodsName}">NewBeeMall</p>
+                            <p class="discount" th:text="${newGoods.goodsIntro}">NewBeeMall</p>
+                            <p class="item_price" th:text="${newGoods.sellingPrice}">NewBeeMall</p>
+                        </a>
+                    </li>
+                </th:block>
+            </th:block>
+            <!-- 閺堫亪鍘ょ純顔煎灟閺勫墽銇氭妯款吇 -->
+            <th:block th:if="${#lists.isEmpty(newGoodses)}">
+                <li>
+                    <a href="##">
+                        <img src="./mall/image/sub_banner/m6.jpg" alt=""/>
+                        <p class="name">閸楀簼璐熼獮铏緲 M6</p>
+                        <p class="discount">闁卞洭顩鹃棅瀹犲窛 闊偂澶嶉崗璺侯暔</p>
+                        <p class="price">1499閸忓啳鎹�</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="##">
+                        <img src="./mall/image/sub_banner/headphones.jpg" alt=""/>
+                        <p class="name">閽冩繄澧懓铏簚</p>
+                        <p class="discount">娑擄拷闁款喖褰夋竟锟� 閸樼喎鏁卞☉鍫ョ叾</p>
+                        <p class="price">228閸忥拷</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="##">
+                        <img src="./mall/image/sub_banner/pc.jpg" alt=""/>
+                        <p class="name">15.6" i3缁楁棁顔囬張锟�</p>
+                        <p class="discount">缁俱倛鏉介張楦块煩 闁叉垵鐫橀弶鎰窛</p>
+                        <p class="price">3099閸忓啳鎹�</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="##">
+                        <img src="./mall/image/sub_banner/air.jpg" alt=""/>
+                        <p class="name">缁岀儤鐨甸崙锟介崠鏍ф珤</p>
+                        <p class="discount">婢堆呪敄闂傦拷 韫囶偄鎯婇悳锟�</p>
+                        <p class="price">1099閸忓啳鎹�</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="##">
+                        <img src="./mall/image/sub_banner/baby-car.jpg" alt=""/>
+                        <p class="name">閹舵ê褰旀繝鏉戝姽閹恒劏婧�</p>
+                        <p class="discount">閸戝搫褰傞崢璇叉倻瀵帮拷閻ㄥ嫬婀撮弬锟�</p>
+                        <p class="price">649閸忓啳鎹�</p>
+                    </a>
+                </li>
+            </th:block>
+        </ul>
+    </div>
+
+    <div id="recommend">
+        <h2>娑撹桨缍橀幒銊ㄥ礃</h2>
+        <a href="##" class="more">閺屻儳婀呴弴鏉戭樋>></a>
+        <ul>
+            <!-- 瀹告煡鍘ょ純顔藉腹閼芥劕鏅㈤崫浣稿灟閺勫墽銇氶柊宥囩枂閸愬懎顔� -->
+            <th:block th:unless="${#lists.isEmpty(recommendGoodses)}">
+                <th:block th:each="recommendGoods : ${recommendGoodses}">
+                    <li>
+                        <a th:href="@{'/goods/detail/'+${recommendGoods.goodsId}}">
+                            <div class="info discount" th:text="${recommendGoods.tag}">
+                                閺傛澘鎼�
+                            </div>
+                            <img th:src="@{${recommendGoods.goodsCoverImg}}" th:alt="${recommendGoods.goodsName}">
+                            <p class="name" th:text="${recommendGoods.goodsName}">NewBeeMall</p>
+                            <p class="item_price" th:text="${recommendGoods.sellingPrice}">NewBeeMall</p>
+                            <p class="counter">閻氭粈缍橀崰婊勵偨</p>
+                            <div class="comment">
+                                <p>閺傛媽娓圭划楣冿拷锟�</p>
+                                <p>婵傜晫澧挎稊鐔峰讲娴犮儰绗夌拹锟�</p>
+                            </div>
+                        </a>
+                    </li>
+                </th:block>
+            </th:block>
+            <!-- 閺堫亪鍘ょ純顔煎灟閺勫墽銇氭妯款吇 -->
+            <th:block th:if="${#lists.isEmpty(recommendGoodses)}">
+                <li>
+                    <a href="##">
+                        <div class="info discount">
+                            閺傛澘鎼�
+                        </div>
+                        <img src="./mall/image/sub_banner/r1.jpg" alt=""/>
+                        <p class="name">閸楀簼璐熼獮铏緲 M6</p>
+                        <p class="price">1499閸忥拷</p>
+                        <p class="counter">閻氭粈缍橀崰婊勵偨</p>
+                        <div class="comment">
+                            <p>閺傛媽娓圭划楣冿拷锟�</p>
+                            <p>婵傜晫澧挎稊鐔峰讲娴犮儰绗夌拹锟�</p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="##">
+                        <div class="info discount">
+                            5閹舵鎹�
+                        </div>
+                        <img src="./mall/image/sub_banner/r2.jpg" alt=""/>
+                        <p class="name">閸楀簼璐熼獮铏緲 M6</p>
+                        <p class="price">1499閸忥拷</p>
+                        <p class="counter">閻氭粈缍橀崰婊勵偨</p>
+                        <div class="comment">
+                            <p>閺傛媽娓圭划楣冿拷锟�</p>
+                            <p>婵傜晫澧挎稊鐔峰讲娴犮儰绗夌拹锟�</p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="##">
+                        <div class="info discount">
+                            閺傛澘鎼�
+                        </div>
+                        <img src="./mall/image/sub_banner/r5.jpg" alt=""/>
+                        <p class="name">閸楀簼璐熼獮铏緲 M6</p>
+                        <p class="price">1499閸忥拷</p>
+                        <p class="counter">閻氭粈缍橀崰婊勵偨</p>
+                        <div class="comment">
+                            <p>閺傛媽娓圭划楣冿拷锟�</p>
+                            <p>婵傜晫澧挎稊鐔峰讲娴犮儰绗夌拹锟�</p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="##">
+                        <div class="info discount">
+                            鐎规﹢妾�
+                        </div>
+                        <img src="./mall/image/sub_banner/m6.jpg" alt=""/>
+                        <p class="name">閸楀簼璐熼獮铏緲 M6</p>
+                        <p class="price">1499閸忥拷</p>
+                        <p class="counter">閻氭粈缍橀崰婊勵偨</p>
+                        <div class="comment">
+                            <p>閺傛媽娓圭划楣冿拷锟�</p>
+                            <p>婵傜晫澧挎稊鐔峰讲娴犮儰绗夌拹锟�</p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="##">
+                        <div class="info discount">
+                            閺傛澘鎼�
+                        </div>
+                        <img src="./mall/image/sub_banner/r6.jpg" alt=""/>
+                        <p class="name">閸楀簼璐熼獮铏緲 M6</p>
+                        <p class="price">1499閸忥拷</p>
+                        <p class="counter">閻氭粈缍橀崰婊勵偨</p>
+                        <div class="comment">
+                            <p>閺傛媽娓圭划楣冿拷锟�</p>
+                            <p>婵傜晫澧挎稊鐔峰讲娴犮儰绗夌拹锟�</p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="##">
+                        <div class="info discount">
+                            閻戭參鏀�
+                        </div>
+                        <img src="./mall/image/sub_banner/r5.jpg" alt=""/>
+                        <p class="name">閸楀簼璐熼獮铏緲 M6</p>
+                        <p class="price">1499閸忥拷</p>
+                        <p class="counter">閻氭粈缍橀崰婊勵偨</p>
+                        <div class="comment">
+                            <p>閺傛媽娓圭划楣冿拷锟�</p>
+                            <p>婵傜晫澧挎稊鐔峰讲娴犮儰绗夌拹锟�</p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="##">
+                        <div class="info discount">
+                            娴滎偅濮岄幍锟�
+                        </div>
+                        <img src="./mall/image/sub_banner/r4.jpg" alt=""/>
+                        <p class="name">閸楀簼璐熼獮铏緲 M6</p>
+                        <p class="price">1499閸忥拷</p>
+                        <p class="counter">閻氭粈缍橀崰婊勵偨</p>
+                        <div class="comment">
+                            <p>閺傛媽娓圭划楣冿拷锟�</p>
+                            <p>婵傜晫澧挎稊鐔峰讲娴犮儰绗夌拹锟�</p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="##">
+                        <div class="info discount">
+                            閺堬拷娴ｅ簼鐜�
+                        </div>
+                        <img src="./mall/image/sub_banner/r3.jpg" alt=""/>
+                        <p class="name">閸楀簼璐熼獮铏緲 M6</p>
+                        <p class="price">1499閸忥拷</p>
+                        <p class="counter">閻氭粈缍橀崰婊勵偨</p>
+                        <div class="comment">
+                            <p>閺傛媽娓圭划楣冿拷锟�</p>
+                            <p>婵傜晫澧挎稊鐔峰讲娴犮儰绗夌拹锟�</p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="##">
+                        <div class="info discount">
+                            閻戭參鏀�
+                        </div>
+                        <img src="./mall/image/sub_banner/r2.jpg" alt=""/>
+                        <p class="name">閸楀簼璐熼獮铏緲 M6</p>
+                        <p class="price">1499閸忥拷</p>
+                        <p class="counter">閻氭粈缍橀崰婊勵偨</p>
+                        <div class="comment">
+                            <p>閺傛媽娓圭划楣冿拷锟�</p>
+                            <p>婵傜晫澧挎稊鐔峰讲娴犮儰绗夌拹锟�</p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="##">
+                        <div class="info discount">
+                            閻戭參鏀�
+                        </div>
+                        <img src="./mall/image/sub_banner/r1.jpg" alt=""/>
+                        <p class="name">閸楀簼璐熼獮铏緲 M6</p>
+                        <p class="price">1499閸忥拷</p>
+                        <p class="counter">閻氭粈缍橀崰婊勵偨</p>
+                        <div class="comment">
+                            <p>閺傛媽娓圭划楣冿拷锟�</p>
+                            <p>婵傜晫澧挎稊鐔峰讲娴犮儰绗夌拹锟�</p>
+                        </div>
+                    </a>
+                </li>
+            </th:block>
+        </ul>
+    </div>
+</content>
+<div th:replace="mall/footer::footer-fragment"></div>
+<!-- jQuery -->
+<script th:src="@{/admin/plugins/jquery/jquery.min.js}"></script>
+<script th:src="@{/mall/js/search.js}" type="text/javascript"></script>
+<!-- jQuery UI 1.11.4 -->
+<script th:src="@{/admin/plugins/jQueryUI/jquery-ui.min.js}"></script>
+<!-- Bootstrap 4 -->
+<script th:src="@{/admin/plugins/bootstrap/js/bootstrap.bundle.min.js}"></script>
+<script th:src="@{/mall/js/swiper.min.js}" type="text/javascript"></script>
+<script th:src="@{/admin/plugins/sweetalert/sweetalert.min.js}"></script>
+<script th:src="@{/mall/js/index.js}" type="text/javascript"></script>
+<script th:src="@{/mall/js/search.js}" type="text/javascript"></script>
+</body>
+</html>

@@ -1,0 +1,196 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.right {
+	width: 888px;
+	height: 555px;
+	margin: 0 auto;
+	position: relative;
+	top: -50px;
+	/*border: solid 1px #11CEC9;*/
+	background: white;
+}
+
+.main-1 {
+	position: relative;
+	top: 20px;
+	margin: 0 auto;
+	width: 436px;
+	height: 111px;
+	/*border: solid 1px #11CEC9;*/
+}
+
+.main-1 a {
+	text-decoration: none;
+}
+
+.main-1 img {
+	width: 55px;
+	height: 55px;
+	margin-top: 10px;
+	margin-left: 28px;
+}
+
+.main-1 p {
+	text-align: center;
+	color: white;
+}
+
+.box-1 {
+	width: 111px;
+	height: 111px;
+	background: #ffbb44;
+	float: left;
+	margin-left: 24px;
+}
+
+.box-2 {
+	width: 111px;
+	height: 111px;
+	background: #9987ed;
+	float: left;
+	margin-left: 24px;
+}
+
+.box-3 {
+	width: 111px;
+	height: 111px;
+	background: #ed6850;
+	float: left;
+	margin-left: 24px;
+}
+
+.main-2 img {
+	width: 55px;
+	height: 55px;
+	margin-top: 10px;
+	margin-left: 28px;
+}
+
+.main-2 {
+	margin: 0 auto;
+	margin-top: 33px;
+	width: 550px;
+	height: 111px;
+	margin-bottom: 30px;
+	/*border: solid 1px #11CEC9;*/
+}
+
+.main-2 a {
+	text-decoration: none;
+}
+
+.main-2 p {
+	text-align: center;
+	color: white;
+}
+
+.box-4 {
+	width: 111px;
+	height: 111px;
+	background: #568de9;
+	float: left;
+	margin-left: 24px;
+}
+
+.box-5 {
+	width: 111px;
+	height: 111px;
+	background: #ffc146;
+	float: left;
+	margin-left: 24px;
+}
+
+.box-6 {
+	width: 111px;
+	height: 111px;
+	background: #64d7bd;
+	float: left;
+	margin-left: 24px;
+}
+
+.box-7 {
+	width: 111px;
+	height: 111px;
+	background: #8d81ef;
+	float: left;
+	margin-left: 24px;
+}
+
+.box002 {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	float: left;
+	margin-left: 10px;
+	width: 280px;
+	height: 213px;
+	border: 1px solid #ddd;
+}
+
+.box003 {
+	line-height: 36px;
+	text-align: center;
+	height: 36px;
+	border-bottom: 1px solid #dddddd;
+}
+
+tbody {
+	display: table-row-group;
+	vertical-align: middle;
+	border-color: inherit;
+}
+
+.name {
+	text-align: center;
+	width: 140px;
+	height: 32px;
+}
+
+.name1 {
+	text-align: center;
+	width: 280px;
+	height: 35px;
+}
+
+.munber {
+	text-align: center;
+	width: 140px;
+	height: 35px;
+}
+/*.table.table-bordered tbody tr td {
+    word-wrap: break-word;
+    word-break: break-all;
+    vertical-align: middle;
+    font-family: "������";
+    text-align: center;
+}
+*/
+/*.table.table-bordered td.name {
+    border-left: 0px;
+    width: 120px;
+    text-align: right;
+}*/
+.table-bordered>thead>tr>th, .table-bordered>tbody>tr>th,
+	.table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td,
+	.table-bordered>tbody>tr>td, .table-bordered>tfoot>tr>td {
+	border: 1px solid #ddd;
+}
+
+th, td, .table-bordered {
+	border-radius: 0 !important;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+table {
+	display: table;
+	border-collapse: separate;
+	border-spacing: 2px;
+	border-color: grey;
+}

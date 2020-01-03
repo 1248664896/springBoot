@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>MusicWorld</title>
+    <link href="/index/css/index.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!--头部-->
+<div class="top">
+    <div class="top1">
+        <div class="imgBox1">
+            <img src="/index/img/logo.png" />
+        </div>
+        <div class="top1-1">
+
+            <div class="t"><a href="#">音乐馆</a></div>
+            <div class="t"><a href="#">我的音乐</a></div>
+            <div class="t"><a th:href="@{/admin/login}">World</a></div>
+            <div class="t"><a href="#">音乐号</a></div>
+            <div class="t"><a href="#">VIP</a></div>
+
+        </div>
+        <div class="top1-2">
+            <input id="i1" type="text" placeholder="搜索音乐"/>
+            <div id="t11"><a href="/user/login" >登录</a></div>
+            <div id="t12"><a href="" >开通绿钻豪华包</a></div>
+            <div id="t13"><a href="" >开通付费包</a></div>
+        </div>
+    </div>
+
+</div>
+<div class="top2">
+    <ul>
+        <li><a th:href="@{/}">首页</a></li>
+        <li><a href="#">歌手</a></li>
+        <li><a href="#">专辑</a></li>
+        <li><a href="#">排行榜</a></li>
+        <li><a href="#">分类歌单</a></li>
+        <li><a href="#">电台</a></li>
+        <li><a href="#">MV</a></li>
+        <li><a href="#">数字专辑</a></li>
+        <li><a href="#">票务</a></li>
+    </ul>
+</div>
+<!--头部end-->
+<!--main-a-->
+<div class="main-a">
+    <h1>歌单推荐</h1>
+    <div class="main-aList">
+        <ul>
+            <li><a href="#">为你推荐</a></li>
+            <li><a href="#">伤感</a></li>
+            <li><a href="#">KTV热歌</a></li>
+            <li><a href="#">节奏控</a></li>
+            <li><a href="#">官方歌单</a></li>
+            <li><a href="#">情歌</a></li>
+        </ul>
+    </div>
+    <div class="main-AA">
+        <a href="#">
+            <div class="main-aA">
+                <img src="/index/img/a1.png" />
+                <p class="ap1">每日新歌:霍尊诗意诠释江湖骚年</p>
+                <p class="ap2">播放量:999万</p>
+            </div>
+        </a>
+        <a href="#">
+            <div class="main-aA">
+                <img src="/index/img/a2.png" />
+                <p class="ap1">每日新歌:霍尊诗意诠释江湖骚年</p>
+                <p class="ap2">播放量:999万</p>
+            </div>
+        </a>
+        <a href="#">
+            <div class="main-aA">
+                <img src="/index/img/a3.png" />
+                <p class="ap1">每日新歌:霍尊诗意诠释江湖骚年</p>
+                <p class="ap2">播放量:999万</p>
+            </div>
+        </a>
+        <a href="#">
+            <div class="main-aA">
+                <img src="/index/img/a4.png" />
+                <p class="ap1">每日新歌:霍尊诗意诠释江湖骚年</p>
+                <p class="ap2">播放量:999万</p>
+            </div>
+        </a>
+        <a href="#">
+            <div class="main-aA">
+                <img src="/index/img/a5.png" />
+                <p class="ap1">每日新歌:霍尊诗意诠释江湖骚年</p>
+                <p class="ap2">播放量:999万</p>
+            </div>
+        </a>
+    </div>
+</div>
+<!--main-1 end-->
+<!--main-b-->
+<div class="main-b">
+    <h1>新歌首发</h1>
+
+    <div class="main-bList">
+        <div class="playTheSong"><img src="/index/img/bf.png"/><a href="#">播放全部</a></div>
+        <ul>
+            <li><a href="#">内地</a></li>
+            <li><a href="#">港台</a></li>
+            <li><a href="#">欧美</a></li>
+            <li><a href="#">日本</a></li>
+            <li><a href="#">韩国</a></li>
+        </ul>
+    </div>
+
+    <div class="bigSongBox">
+        <a href="#">
+            <div class="song">
+                <img src="/index/img/b1.png"/>
+                <div class="songBox">
+                    <p class="main-bSongName">此生惟你《仙剑奇侠传》</p>
+                    <p class="main-bSinger">胡歌</p>
+                </div>
+                <p class="main-bSongSize">4:45</p>
+            </div>
+        </a>
+        <a href="#">
+            <div class="song">
+                <img src="/index/img/b2.png"/>
+                <div class="songBox">
+                    <p class="main-bSongName">此生惟你《仙剑奇侠传》</p>
+                    <p class="main-bSinger">胡歌</p>
+                </div>
+                <p class="main-bSongSize">4:45</p>
+            </div>
+        </a>
+        <a href="#">
+            <div class="song">
+                <img src="/index/img/b3.png"/>
+                <div class="songBox">
+                    <p class="main-bSongName">此生惟你《仙剑奇侠传》</p>
+                    <p class="main-bSinger">胡歌</p>
+                </div>
+                <p class="main-bSongSize">4:45</p>
+            </div>
+        </a>
+        <a href="#">
+            <div class="song">
+                <img src="/index/img/b4.png"/>
+                <div class="songBox">
+                    <p class="main-bSongName">此生惟你《仙剑奇侠传》</p>
+                    <p class="main-bSinger">胡歌</p>
+                </div>
+                <p class="main-bSongSize">4:45</p>
+            </div>
+        </a>
+        <a href="#">
+            <div class="song">
+                <img src="/index/img/b5.png"/>
+                <div class="songBox">
+                    <p class="main-bSongName">此生惟你《仙剑奇侠传》</p>
+                    <p class="main-bSinger">胡歌</p>
+                </div>
+                <p class="main-bSongSize">4:45</p>
+            </div>
+        </a>
+        <a href="#">
+            <div class="song">
+                <img src="/index/img/b6.png"/>
+                <div class="songBox">
+                    <p class="main-bSongName">此生惟你《仙剑奇侠传》</p>
+                    <p class="main-bSinger">胡歌</p>
+                </div>
+                <p class="main-bSongSize">4:45</p>
+            </div>
+        </a>
+        <a href="#">
+            <div class="song">
+                <img src="/index/img/b7.png"/>
+                <div class="songBox">
+                    <p class="main-bSongName">此生惟你《仙剑奇侠传》</p>
+                    <p class="main-bSinger">胡歌</p>
+                </div>
+                <p class="main-bSongSize">4:45</p>
+            </div>
+        </a>
+        <a href="#">
+            <div class="song">
+                <img src="/index/img/b8.png"/>
+                <div class="songBox">
+                    <p class="main-bSongName">此生惟你《仙剑奇侠传》</p>
+                    <p class="main-bSinger">胡歌</p>
+                </div>
+                <p class="main-bSongSize">4:45</p>
+            </div>
+        </a>
+        <a href="#">
+            <div class="song">
+                <img src="/index/img/b9.png"/>
+                <div class="songBox">
+                    <p class="main-bSongName">此生惟你《仙剑奇侠传》</p>
+                    <p class="main-bSinger">胡歌</p>
+                </div>
+                <p class="main-bSongSize">4:45</p>
+            </div>
+        </a>
+    </div>
+</div>
+<!--main-b end-->
+<!--main-c-->
+<div class="main-c">
+    <h1>精彩推荐</h1>
+    <div class="main-cImgBox">
+        <a href="#"><img src="/index/img/c1.png"/></a>
+        <a href="#"><img src="/index/img/c2.png"/></a>
+    </div>
+</div>
+
+<!--main-c end-->
+<!--main-d-->
+<div class="main-d">
+    <h1>新碟首发</h1>
+    <div class="main-dList">
+        <ul>
+            <li><a href="#">内地</a></li>
+            <li><a href="#">港台</a></li>
+            <li><a href="#">欧美</a></li>
+            <li><a href="#">韩国</a></li>
+            <li><a href="#">日本</a></li>
+        </ul>
+    </div>
+    <div class="bigMain-dBox">
+        <a href="#">
+            <div class="main-dBox">
+                <img src="/index/img/d2.png" />
+                <p class="main-dBoxP1">我们都一样</p>
+                <p class="main-dBoxP2">张杰</p>
+            </div>
+        </a>
+        <a href="#">
+            <div class="main-dBox">
+                <img src="/index/img/d3.png" />
+                <p class="main-dBoxP1">我们都一样</p>
+                <p class="main-dBoxP2">张杰</p>
+            </div>
+        </a>
+        <a href="#">
+            <div class="main-dBox">
+                <img src="/index/img/d4.png" />
+                <p class="main-dBoxP1">我们都一样</p>
+                <p class="main-dBoxP2">张杰</p>
+            </div>
+        </a>
+        <a href="#">
+            <div class="main-dBox">
+                <img src="/index/img/d5.png" />
+                <p class="main-dBoxP1">我们都一样</p>
+                <p class="main-dBoxP2">张杰</p>
+            </div>
+        </a>
+        <a href="#">
+            <div class="main-dBox">
+                <img src="/index/img/d6.png" />
+                <p class="main-dBoxP1">我们都一样</p>
+                <p class="main-dBoxP2">张杰</p>
+            </div>
+        </a>
+        <a href="#">
+            <div class="main-dBox">
+                <img src="/index/img/d7.png" />
+                <p class="main-dBoxP1">我们都一样</p>
+                <p class="main-dBoxP2">张杰</p>
+            </div>
+        </a>
+        <a href="#">
+            <div class="main-dBox">
+                <img src="/index/img/d8.png" />
+                <p class="main-dBoxP1">我们都一样</p>
+                <p class="main-dBoxP2">张杰</p>
+            </div>
+        </a>
+        <a href="#">
+            <div class="main-dBox">
+                <img src="/index/img/d9.png" />
+                <p class="main-dBoxP1">我们都一样</p>
+                <p class="main-dBoxP2">张杰</p>
+            </div>
+        </a>
+        <a href="#">
+            <div class="main-dBox">
+                <img src="/index/img/d10.png" />
+                <p class="main-dBoxP1">我们都一样</p>
+                <p class="main-dBoxP2">张杰</p>
+            </div>
+        </a>
+        <a href="#">
+            <div class="main-dBox">
+                <img src="/index/img/d1.png" />
+                <p class="main-dBoxP1">我们都一样</p>
+                <p class="main-dBoxP2">张杰</p>
+            </div>
+        </a>
+    </div>
+
+</div>
+
+
+<!--main-d end-->
+<!--main-e -->
+<div class="main-e">
+    <h1>排行榜</h1>
+    <a href="#" class="main-eA">更多</a>
+    <div class="bigMain-eBox">
+        <div class="Main-eBox1">
+            <h3>巅峰榜</h3>
+                <h4>流行指数</h4>
+                    <div class="Main-eSong">
+                        <a href="#">
+                            <p>1 小情歌</p>
+                            <p>吴青峰</p>
+                        </a>
+                        <a href="#" class="">
+                            <p>2 小情歌</p>
+                            <p>吴青峰</p>
+                        </a>
+                        <a href="#">
+                            <p>3 小情歌</p>
+                            <p>吴青峰</p>
+                        </a>
+                    </div>
+        </div>
+        <div class="Main-eBox2">
+            <h3>巅峰榜</h3>
+             <h4>巅峰榜</h4>
+                    <div class="Main-eSong">
+                        <a href="#">
+                            <p>1 小情歌</p>
+                            <p>吴青峰</p>
+                        </a>
+                        <a href="#" class="">
+                            <p>2 小情歌</p>
+                            <p>吴青峰</p>
+                        </a>
+                        <a href="#">
+                            <p>3 小情歌</p>
+                            <p>吴青峰</p>
+                        </a>
+                    </div>
+        </div>
+        <div class="Main-eBox3">
+            <h3>巅峰榜</h3>
+             <h4>巅峰榜</h4>
+                    <div class="Main-eSong">
+                        <a href="#">
+                            <p>1 小情歌</p>
+                            <p>吴青峰</p>
+                        </a>
+                        <a href="#" class="">
+                            <p>2 小情歌</p>
+                            <p>吴青峰</p>
+                        </a>
+                        <a href="#">
+                            <p>3 小情歌</p>
+                            <p>吴青峰</p>
+                        </a>
+                    </div>
+        </div>
+        <div class="Main-eBox4">
+            <h3>巅峰榜</h3>
+             <h4>巅峰榜</h4>
+                    <div class="Main-eSong">
+                        <a href="#">
+                            <p>1 小情歌</p>
+                            <p>吴青峰</p>
+                        </a>
+                        <a href="#" class="">
+                            <p>2 小情歌</p>
+                            <p>吴青峰</p>
+                        </a>
+                        <a href="#">
+                            <p>3 小情歌</p>
+                            <p>吴青峰</p>
+                        </a>
+                    </div>
+        </div>
+        <div class="Main-eBox5">
+            <h3>巅峰榜</h3>
+             <h4>巅峰榜</h4>
+                    <div class="Main-eSong">
+                        <a href="#">
+                            <p>1 小情歌</p>
+                            <p>吴青峰</p>
+                        </a>
+                        <a href="#" class="">
+                            <p>2 小情歌</p>
+                            <p>吴青峰</p>
+                        </a>
+                        <a href="#">
+                            <p>3 小情歌</p>
+                            <p>吴青峰</p>
+                        </a>
+                    </div>
+        </div>
+
+
+    </div>
+</div>
+<!--main-e end-->
+<!--main-f -->
+<div class="main-f">
+    <h1>MV</h1>
+    <div class="main-fList">
+        <ul>
+            <li><a href="#">精选</a></li>
+            <li><a href="#">内地</a></li>
+            <li><a href="#">韩国</a></li>
+            <li><a href="#">港台</a></li>
+            <li><a href="#">欧美</a></li>
+            <li><a href="#">日本</a></li>
+        </ul>
+    </div>
+    <div class="bigMain-fBox">
+        <a href="#">
+            <div class="Main-fBox">
+                <img class="Main-fBoxImg1" src="/index/img/f1.png" />
+                <p class="Main-fBoxP1">你就不要想起我</p>
+                <p class="Main-fBoxP2">田馥甄</p>
+                <img class="Main-fBoxImg2" src="/index/img/s.png"/>
+                <p class="Main-fBoxP3">99999</p>
+            </div>
+        </a>
+        <a href="#">
+            <div class="Main-fBox">
+                <img class="Main-fBoxImg1" src="/index/img/f2.png" />
+                <p class="Main-fBoxP1">你就不要想起我</p>
+                <p class="Main-fBoxP2">田馥甄</p>
+                <img class="Main-fBoxImg2" src="/index/img/s.png"/>
+                <p class="Main-fBoxP3">99999</p>
+            </div>
+        </a>
+        <a href="#">
+            <div class="Main-fBox">
+                <img class="Main-fBoxImg1" src="/index/img/f3.png" />
+                <p class="Main-fBoxP1">你就不要想起我</p>
+                <p class="Main-fBoxP2">田馥甄</p>
+                <img class="Main-fBoxImg2" src="/index/img/s.png"/>
+                <p class="Main-fBoxP3">99999</p>
+            </div>
+        </a>
+        <a href="#">
+            <div class="Main-fBox">
+                <img class="Main-fBoxImg1" src="/index/img/f4.png" />
+                <p class="Main-fBoxP1">你就不要想起我</p>
+                <p class="Main-fBoxP2">田馥甄</p>
+                <img class="Main-fBoxImg2" src="/index/img/s.png"/>
+                <p class="Main-fBoxP3">99999</p>
+            </div>
+        </a>
+        <a href="#">
+            <div class="Main-fBox">
+                <img class="Main-fBoxImg1" src="/index/img/f5.png" />
+                <p class="Main-fBoxP1">你就不要想起我</p>
+                <p class="Main-fBoxP2">田馥甄</p>
+                <img class="Main-fBoxImg2" src="/index/img/s.png"/>
+                <p class="Main-fBoxP3">99999</p>
+            </div>
+        </a>
+        <a href="#">
+            <div class="Main-fBox">
+                <img class="Main-fBoxImg1" src="/index/img/f6.png" />
+                <p class="Main-fBoxP1">你就不要想起我</p>
+                <p class="Main-fBoxP2">田馥甄</p>
+                <img class="Main-fBoxImg2" src="/index/img/s.png"/>
+                <p class="Main-fBoxP3">99999</p>
+            </div>
+        </a>
+        <a href="#">
+            <div class="Main-fBox">
+                <img class="Main-fBoxImg1" src="/index/img/f7.png" />
+                <p class="Main-fBoxP1">你就不要想起我</p>
+                <p class="Main-fBoxP2">田馥甄</p>
+                <img class="Main-fBoxImg2" src="/index/img/s.png"/>
+                <p class="Main-fBoxP3">99999</p>
+            </div>
+        </a>
+        <a href="#">
+            <div class="Main-fBox">
+                <img class="Main-fBoxImg1" src="/index/img/f8.png" />
+                <p class="Main-fBoxP1">你就不要想起我</p>
+                <p class="Main-fBoxP2">田馥甄</p>
+                <img class="Main-fBoxImg2" src="/index/img/s.png"/>
+                <p class="Main-fBoxP3">99999</p>
+            </div>
+        </a>
+        <a href="#">
+            <div class="Main-fBox">
+                <img class="Main-fBoxImg1" src="/index/img/f9.png" />
+                <p class="Main-fBoxP1">你就不要想起我</p>
+                <p class="Main-fBoxP2">田馥甄</p>
+                <img class="Main-fBoxImg2" src="/index/img/s.png"/>
+                <p class="Main-fBoxP3">99999</p>
+            </div>
+        </a>
+        <a href="#">
+            <div class="Main-fBox">
+                <img class="Main-fBoxImg1" src="/index/img/f10.png" />
+                <p class="Main-fBoxP1">你就不要想起我</p>
+                <p class="Main-fBoxP2">田馥甄</p>
+                <img class="Main-fBoxImg2" src="/index/img/s.png"/>
+                <p class="Main-fBoxP3">99999</p>
+            </div>
+        </a>
+    </div>
+
+
+</div>
+<!--main-f end-->
+
+<!--main-g -->
+<div class="main-g">
+    <div class="bigMain-g">
+        <div class="main-gBox1">
+            <p>下载QQ音乐客户端</p>
+            <a href="#">
+                <div class="main-gBox1-box1">
+                    <img src="/index/img/g1.png"/>
+                    <p style="width: 60px;height: 70px;">PC版</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="main-gBox1-box1">
+                    <img src="/index/img/g2.png"/>
+                    <p>Mac版</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="main-gBox1-box1">
+                    <img src="/index/img/g3.png"/>
+                    <p>Android版</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="main-gBox1-box1">
+                    <img src="/index/img/g4.png"/>
+                    <p>iphone版</p>
+                </div>
+            </a>
+            <p style="position:relative ;top: 40px;color:#7d8a94;font-size: 12px;width: 60px;height: 70px;clear: both; ">开发平台</p>
+            <ul class="main-gUl">
+                <li><a href="#">腾讯音乐人平台</a></li>
+                <li><a href="#">音乐号认证</a></li>
+                <li><a href="#">机构入驻</a></li>
+            </ul>
+        </div>
+
+        <div class="main-gBox2">
+            <p  class="main-gBox2P">特色产品</p>
+            <a href="#" style="border-bottom: none;text-decoration:none; ">
+                <div class="main-gBox2-box1" >
+                    <img src="/index/img/g5.png" />
+                    <p>全名K歌</p>
+                </div>
+            </a>
+            <a href="#" >
+                <div class="main-gBox2-box2">
+                    <img src="/index/img/g6.png" />
+                    <p>Super Sound</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="main-gBox2-box3">
+                    <img src="/index/img/g7.png" />
+                    <p>Qplay</p>
+                </div>
+            </a>
+            <ul class="main-gBox2Ul">
+                <li><a href="#">车载互联</a></li>
+                <li class="main-gBox2UlLi2"><a href="#">QQ演出</a></li>
+            </ul>
+        </div>
+
+        <div class="main-gBox3">
+            <p style="position:relative ;color:#7d8a94;font-size: 12px; ">合作链接</p>
+            <ul class="main-gBox3Ul1">
+                <li><a href="#">CJ ENM</a></li>
+                <li><a href="#">最新版QQ</a></li>
+                <li><a href="#">QQ浏览器</a></li>
+                <li><a href="#">企鹅FM</a></li>
+            </ul>
+            <ul class="main-gBox3Ul2">
+                <li><a href="#">腾讯视频</a></li>
+                <li><a href="#">腾讯社交广告</a></li>
+                <li><a href="#">腾讯微云</a></li>
+                <li><a href="#">只能电视网</a></li>
+            </ul>
+            <ul class="main-gBox3Ul3">
+                <li><a href="#">手机QQ空间</a></li>
+                <li><a href="#">电脑管家</a></li>
+                <li><a href="#">腾讯云</a></li>
+                <li><a href="#">当贝市场</a></li>
+            </ul>
+        </div>
+
+
+
+        <div class="main-gBottom">
+            <ul>
+                <li><a href="https://www.baidu.com/">关于腾讯</a></li>
+                <li><a href="#">About Tencent</a></li>
+                <li><a href="#">服务条款</a></li>
+                <li><a href="#">用户服务协议</a></li>
+                <li><a href="#">隐私政策</a></li>
+                <li><a href="#">权利声明</a></li>
+                <li><a href="#">广告服务</a></li>
+                <li><a href="#">腾讯招聘</a></li>
+                <li><a href="#">客服中心</a></li>
+                <li><a href="/login.html">网站导航</a></li>
+            </ul>
+
+        </div>
+        <div class="" style="width: 500px;height: 70px; margin-top: -140px;position:relative;left: 200px; ">
+            <p style="position:relative ;color:#7d8a94;font-size: 12px; text-align: center;">Copyright @1996 - 2019 Tencent All Rights Reserved</p>
+            <p style="position:relative ;color:#7d8a94;font-size: 12px; text-align: center;">腾讯公司 版权所有 腾讯网络文化经营许可证</p>
+        </div>
+
+    </div>
+
+
+
+</div>
+<!--main-g end-->
+</body>
+</html>

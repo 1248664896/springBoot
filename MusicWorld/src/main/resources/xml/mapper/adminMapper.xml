@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.springboot.musicworld.dao.AdminMapper">
+    <resultMap id="BaseResultMap" type="com.springboot.musicworld.entity.Admin">
+        <id column="id" jdbcType="VARCHAR" property="id" />
+        <result column="name" jdbcType="VARCHAR" property="name" />
+        <result column="email" jdbcType="VARCHAR" property="email" />
+        <result column="loginName" jdbcType="VARCHAR" property="loginName" />
+        <result column="password" jdbcType="VARCHAR" property="password" />
+        <result column="identity" jdbcType="VARCHAR" property="identity" />
+        <result column="superAccount" jdbcType="VARCHAR" property="superAccount" />
+    </resultMap>
+
+    <sql id="sqlColumn">
+        id,loginName,password
+    </sql>
+
+    <insert id="">
+
+    </insert>
+
+    <select id="login" resultType="com.springboot.musicworld.entity.Admin">
+        select  * from admin where loginName=#{loginName} and  password=#{password}
+    </select>
+
+    <select id="getAdminById" resultType="com.springboot.musicworld.entity.Admin">
+        select  * from admin where id=#{id}
+    </select>
+
+    <select id="returnId" resultType="java.lang.String">
+        select  id from admin where loginName=#{loginName}
+    </select>
+
+    <select id="returnPassword" resultType="java.lang.String">
+        select  password from admin where id=#{id}
+    </select>
+
+    <update id="updateName">
+        update admin set name=#{name} where id=#{id}
+    </update>
+
+    <update id="updatePassword">
+        update admin set password=#{newPassword} where password=#{oldPassword}  and  id=#{id}
+    </update>
+
+    <insert id="addAdmin">
+        insert  into admin (id,loginName,password) values (#{id},#{loginName},#{password})
+    </insert>
+
+    <select id="verifyTwoPassword" resultType="com.springboot.musicworld.entity.Admin">
+        select  * from admin where  password=#{oldPassword} and id=#{id}
+    </select>
+
+    <update id="changePassword">
+        update admin set password=#{passwrod} where id=#{id}
+    </update>
+
+</mapper>

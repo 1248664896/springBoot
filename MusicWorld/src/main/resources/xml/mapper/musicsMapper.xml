@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.springboot.musicworld.dao.MusicsMapper">
+    <resultMap id="BaseResultMap" type="com.springboot.musicworld.entity.Musics">
+        <id column="id" jdbcType="VARCHAR" property="id"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="size" jdbcType="VARCHAR" property="size"/>
+        <result column="duration" jdbcType="VARCHAR" property="duration"/>
+        <result column="info" jdbcType="VARCHAR" property="info"/>
+        <result column="addDateTime" jdbcType="VARCHAR" property="addDateTime"/>
+        <result column="fileName" jdbcType="VARCHAR" property="fileName"/>
+        <result column="newFileName" jdbcType="VARCHAR" property="newFileName"/>
+        <result column="type" jdbcType="VARCHAR" property="type"/>
+        <result column="status" jdbcType="VARCHAR" property="status"/>
+    </resultMap>
+
+    <!--用来封装SQL语句-->
+    <sql id="Base_Column_List">
+        id,name,size,duration,info,addDateTime,fileName,newFileName,type
+    </sql>
+
+    <select id="musicsList" resultMap="BaseResultMap">
+        select *
+        from musics;
+    </select>
+
+    <!--音乐分页-->
+    <select id="findMusicsList" parameterType="Map" resultMap="BaseResultMap">
+        select * from musics where 1=1 order by addDateTime desc   limit #{start},#{limit};;
+    </select>
+
+    <select id="getToMusics" parameterType="Map" resultType="int">
+        select count(*) from musics
+        where 1=1
+    </select>
+
+<!--
+    <select id="findMusicsList" parameterType="Map" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from musics
+        where 1=1
+        <if test="name!=null and name!=''">
+            and name = #{name}
+        </if>
+        order by create_time desc
+        <if test="start!=null and limit!=null">
+            limit #{start},#{limit}
+        </if>
+    </select>
+
+    <select id="getToMusics" parameterType="Map" resultType="int">
+        select count(*) from musics
+        where 1=1
+        <if test="name!=null and name!=''">
+            and name = #{name}
+        </if>
+    </select>-->
+    <!--音乐分页-->
+
+
+
+    <insert id="addMusicA">
+        insert  into  musics(id,name,size,duration,info,addDateTime,fileName,newFileName,type,status) values
+        (#{id},#{name},#{size},#{duration},#{info},#{addDateTime},#{fileName},#{newFileName},#{type},#{status});
+    </insert>
+
+    <update id="musicPutaway">
+        update musics set status=#{status} where id=#{id}
+    </update>
+
+    <update id="musicUnShelve">
+        update musics set status=#{status} where id=#{id}
+    </update>
+
+    <delete id="musicDelete">
+            delete  from musics where id=#{id}
+    </delete>
+
+    <select id="list" resultMap="BaseResultMap">
+        select * from musics
+    </select>
+
+
+</mapper>

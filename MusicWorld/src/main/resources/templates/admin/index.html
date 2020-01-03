@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<header th:replace="admin/header::header-fragment">
+    <link th:href="@{/admin/mainPage.css}" type="text/css" rel="stylesheet" />
+</header>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .right {
+        width: 888px;
+        height: 555px;
+        margin: 0 auto;
+        position: relative;
+        top: -50px;
+        /*border: solid 1px #11CEC9;*/
+        background: white;
+    }
+
+    .main-1 {
+        position: relative;
+        top: 20px;
+        margin: 0 auto;
+        width: 436px;
+        height: 111px;
+        /*border: solid 1px #11CEC9;*/
+    }
+
+    .main-1 a {
+        text-decoration: none;
+    }
+
+    .main-1 img {
+        width: 55px;
+        height: 55px;
+        margin-top: 10px;
+        margin-left: 28px;
+    }
+
+    .main-1 p {
+        text-align: center;
+        color: white;
+    }
+
+    .box-1 {
+        width: 111px;
+        height: 111px;
+        background: #ffbb44;
+        float: left;
+        margin-left: 24px;
+    }
+
+    .box-2 {
+        width: 111px;
+        height: 111px;
+        background: #9987ed;
+        float: left;
+        margin-left: 24px;
+    }
+
+    .box-3 {
+        width: 111px;
+        height: 111px;
+        background: #ed6850;
+        float: left;
+        margin-left: 24px;
+    }
+
+    .main-2 img {
+        width: 55px;
+        height: 55px;
+        margin-top: 10px;
+        margin-left: 28px;
+    }
+
+    .main-2 {
+        margin: 0 auto;
+        margin-top: 33px;
+        width: 550px;
+        height: 111px;
+        margin-bottom: 30px;
+        /*border: solid 1px #11CEC9;*/
+    }
+
+    .main-2 a {
+        text-decoration: none;
+    }
+
+    .main-2 p {
+        text-align: center;
+        color: white;
+    }
+
+    .box-4 {
+        width: 111px;
+        height: 111px;
+        background: #568de9;
+        float: left;
+        margin-left: 24px;
+    }
+
+    .box-5 {
+        width: 111px;
+        height: 111px;
+        background: #ffc146;
+        float: left;
+        margin-left: 24px;
+    }
+
+    .box-6 {
+        width: 111px;
+        height: 111px;
+        background: #64d7bd;
+        float: left;
+        margin-left: 24px;
+    }
+
+    .box-7 {
+        width: 111px;
+        height: 111px;
+        background: #8d81ef;
+        float: left;
+        margin-left: 24px;
+    }
+
+    .box002 {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        float: left;
+        margin-left: 10px;
+        width: 280px;
+        height: 213px;
+        border: 1px solid #ddd;
+    }
+
+    .box003 {
+        line-height: 36px;
+        text-align: center;
+        height: 36px;
+        border-bottom: 1px solid #dddddd;
+    }
+
+    tbody {
+        display: table-row-group;
+        vertical-align: middle;
+        border-color: inherit;
+    }
+
+    .name {
+        text-align: center;
+        width: 140px;
+        height: 32px;
+    }
+
+    .name1 {
+        text-align: center;
+        width: 280px;
+        height: 35px;
+    }
+
+    .munber {
+        text-align: center;
+        width: 140px;
+        height: 35px;
+    }
+    /*.table.table-bordered tbody tr td {
+        word-wrap: break-word;
+        word-break: break-all;
+        vertical-align: middle;
+        font-family: "锟斤拷锟斤拷锟斤拷";
+        text-align: center;
+    }
+    */
+    /*.table.table-bordered td.name {
+        border-left: 0px;
+        width: 120px;
+        text-align: right;
+    }*/
+    .table-bordered>thead>tr>th, .table-bordered>tbody>tr>th,
+    .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td,
+    .table-bordered>tbody>tr>td, .table-bordered>tfoot>tr>td {
+        border: 1px solid #ddd;
+    }
+
+    th, td, .table-bordered {
+        border-radius: 0 !important;
+    }
+
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+
+    table {
+        display: table;
+        border-collapse: separate;
+        border-spacing: 2px;
+        border-color: grey;
+    }
+    }
+
+</style>
+<body class="hold-transition sidebar-mini">
+<div class="wrapper">
+    <!-- 引入页面头header-fragment -->
+    <div th:replace="admin/header::header-nav"></div>
+    <!-- 引入工具栏sidebar-fragment -->
+    <div th:replace="admin/sidebar::sidebar-fragment(${path})"></div>
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+            <div class="container-fluid">
+            </div><!-- /.container-fluid -->
+        </div>
+        <!-- Main content -->
+        <div class="content">
+            <div class="card card-primary card-outline">
+                <div class="card-header">
+                    <h3 class="card-title">首页</h3>
+                </div> <!-- /.card-body -->
+                <div class="card-body">
+                    <div class="right" style="margin-top: 130px; opacity: 0.9;">
+                        <!-- 开始 -->
+                        <!-- 开始 -->
+                        <div class="main-1">
+                            <div class="box-1">
+                                <a href="#"> <img
+                                        th:src="@{/admin/img/a1.png}" />
+                                    <p>商家会员卡</p>
+                                </a>
+                            </div>
+                            <div class="box-2">
+                                <a href="#"> <img
+                                        src="/admin/img/a2.png" />
+                                    <p>商家优惠券</p>
+                                </a>
+                            </div>
+                            <div class="box-3">
+                                <a href="#"> <img
+                                        src="/admin/img/a3.png" />
+                                    <p>商家公众号</p>
+                                </a>
+                            </div>
+
+                        </div>
+                        <!-- 开始 end -->
+
+                        <!-- 开始 -->
+                        <div class="main-2">
+                            <div class="box-4">
+                                <a href="#"><img
+                                        src="/admin/img/a4.png" />
+                                    <p>平台配送</p></a>
+                            </div>
+                            <div class="box-5">
+                                <a href="#"><img
+                                        src="/admin/img/a5.png" />
+                                    <p>平台配送</p></a>
+                            </div>
+                            <div class="box-6">
+                                <a href="#"><img
+                                        src="/admin/img/a6.png" />
+                                    <p>平台配送</p></a>
+                            </div>
+                            <div class="box-7">
+                                <a href="#"><img
+                                        src="/admin/img/a7.png" />
+                                    <p>平台配送</p></a>
+                            </div>
+                        </div>
+                        <!-- end -->
+
+
+
+                        <div>
+                            <div class="box002">
+                                <div class="box003">订单统计信息</div>
+                                <table class="table-bordered ">
+                                    <tbody>
+                                    <tr>
+                                        <td class="name">未处理订单:</td>
+                                        <td class="munber"><a href="#">99999</a>个</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="name">待结算订单:</td>
+                                        <td class="munber"><a href="#">99999</a>个</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="name">已到订单:</td>
+                                        <td class="munber"><a href="#">99999</a>个</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="name">未到订单:</td>
+                                        <td class="munber"><a href="#">99999</a>个</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="name">交易失败:</td>
+                                        <td class="munber"><a href="#">3</a>个</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="box002">
+                                <div class="box003">球场统计信息</div>
+                                <table class="table-bordered ">
+                                    <tbody>
+                                    <tr>
+                                        <td class="name">球场总数:</td>
+                                        <td class="munber"><a href="#">0</a>个</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="name">回收站球场:</td>
+                                        <td class="munber"><a href="#">99</a>个</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="name">上架商品:</td>
+                                        <td class="munber"><a href="#">99</a>个</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="name">下架商品:</td>
+                                        <td class="munber"><a href="#">999</a>个</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="name">球馆评论:</td>
+                                        <td class="munber"><a href="#">33333</a>条</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="box002">
+                                <div class="box003">最新消息</div>
+                                <table class="table-bordered ">
+                                    <tbody>
+                                    <tr>
+                                        <td class="name1"><a href="#">您在美国洛杉矶有份外卖</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="name1"><a href="#">您在非洲有份外卖</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="name1"><a href="#">您在欧洲有份外卖</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="name1"><a href="#">美国大佬有份订单</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="name1"><a href="#">订单</a></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </div>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+    <!-- 引入页脚footer-fragment -->
+    <div th:replace="admin/footer::footer-fragment"></div>
+</div>
+<!-- jQuery -->
+<script th:src="@{/admin/plugins/jquery/jquery.min.js}"></script>
+<!-- jQuery UI 1.11.4 -->
+<script th:src="@{/admin/plugins/jQueryUI/jquery-ui.min.js}"></script>
+<!-- Bootstrap 4 -->
+<script th:src="@{/admin/plugins/bootstrap/js/bootstrap.bundle.min.js}"></script>
+<!-- AdminLTE App -->
+<script th:src="@{/admin/dist/js/adminlte.min.js}"></script>
+</body>
+</html>

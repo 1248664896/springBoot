@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.springboot.musicworld.dao.UsersMapper">
+    <resultMap id="BaseResultMap" type="com.springboot.musicworld.entity.Users">
+        <id column="id" jdbcType="VARCHAR" property="id"/>
+        <result column="userName" jdbcType="VARCHAR" property="userName"/>
+        <result column="password" jdbcType="BIGINT" property="password"/>
+        <result column="email" jdbcType="INTEGER" property="email"/>
+        <result column="nickName" jdbcType="TINYINT" property="nickName"/>
+        <result column="gender" jdbcType="TINYINT" property="gender"/>
+        <result column="coccupations" jdbcType="TINYINT" property="coccupations"/>
+        <result column="nativePlace" jdbcType="TINYINT" property="nativePlace"/>
+        <result column="mobilePhone" jdbcType="TINYINT" property="mobilePhone"/>
+        <result column="intro" jdbcType="TINYINT" property="intro"/>
+        <result column="interest" jdbcType="TINYINT" property="interest"/>
+        <result column="headPortrait" jdbcType="TINYINT" property="headPortrait"/>
+        <result column="registrationTime" jdbcType="TINYINT" property="registrationTime"/>
+        <result column="birthday" jdbcType="TINYINT" property="birthday"/>
+    </resultMap>
+
+    <insert id="register">
+        insert  into users(id,userName,mobilePhone,password) values (#{id},#{userName},#{mobilePhone},#{password})
+    </insert>
+
+    <select id="mobilePhoneExist" resultType="java.lang.String">
+        select mobilePhone from  users where mobilePhone=#{mobilePhone}
+    </select>
+
+    <select id="userNameExist" resultType="java.lang.String">
+        select userName from  users where userName=#{userName}
+    </select>
+
+
+    <select id="">
+        select  * from users   order by id desc limit #{start},#{limit}
+    </select>
+
+
+</mapper>
